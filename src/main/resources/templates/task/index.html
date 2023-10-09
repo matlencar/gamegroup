@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+    <nav class=" blue darken-1">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo right">ConsultForHealth</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li class="active"><a href="/task">Consultas pendentes</a></li>
+            <li><a href="#">Consultas concluidas</a></li>
+            <li><a href="#">Usuarios</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <h1>Consultas pendentes</h1>
+
+   <ul>
+        <li th:each="task : ${tasks}" th:text="${tasks}">Consultas</li>
+   </ul>
+</body>
+</html>
