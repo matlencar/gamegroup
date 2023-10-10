@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body>
+    <nav class="blue darken-1">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo right">ConsultForHealth</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li class="active"><a href="/task">Consultas pendentes</a></li>
+          <li><a href="#">Consultas concluidas</a></li>
+          <li><a href="#">Usuarios</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <nav class=" blue darken-1">
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo right">ConsultForHealth</a>
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li class="active"><a href="/task">Consultas pendentes</a></li>
-            <li><a href="#">Consultas concluidas</a></li>
-            <li><a href="#">Usuarios</a></li>
-          </ul>
-        </div>
-      </nav>
-
+    
+    <main class="container">
     <h1>Consultas pendentes</h1>
 
-   <ul>
-        <li th:each="task : ${tasks}" th:text="${tasks}">Consultas</li>
-   </ul>
-</body>
+      <div class="row">
+    <div class="col s12 m6 l4" th:each="task : ${tasks}">
+      <div class="card">
+        <div class="card-content">
+            <div class="progress">
+                <div class="determinate" style="width: 70%"></div>
+            </div>
+          <span class="card-title" th:text=""${task}></span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+          <span data-badge-caption="andamento" class="badge blue white-text">4</span>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    </main>
+  </body>
 </html>
