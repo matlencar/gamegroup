@@ -11,8 +11,9 @@ import lombok.Data;
 
 @Entity
 @Data
-public class TaskConsulta {
+public class Consulta {
     
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;

@@ -11,7 +11,7 @@ public class TaskConsultaService {
     @Autowired
     TaskConsultaRepository repository;
     
-    public List<TaskConsulta> findAll() {
+    public List<Consulta> findAll() {
         
         return repository.findAll();
     }
