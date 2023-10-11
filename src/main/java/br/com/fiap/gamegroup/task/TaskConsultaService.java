@@ -15,4 +15,13 @@ public class TaskConsultaService {
         
         return repository.findAll();
     }
+
+    public boolean delete(int id) {
+        var consulta = repository.findById(id);
+
+        if(consulta.isEmpty()) return false;
+
+        repository.deleteById(id);
+        return true;
+    }
 }
