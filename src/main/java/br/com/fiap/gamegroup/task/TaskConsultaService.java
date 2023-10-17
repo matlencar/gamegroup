@@ -24,4 +24,8 @@ public class TaskConsultaService {
         repository.deleteById(id);
         return true;
     }
+
+    public void save(Consulta consulta) {
+        repository.save(consulta);
+    }
 }

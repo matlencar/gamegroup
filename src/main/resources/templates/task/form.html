@@ -23,6 +23,7 @@
     </nav>
 
     <main class="container">
+
       <h2>Formulario de cadastro</h2>
 
       <div class="card">
@@ -30,19 +31,19 @@
           <div class="card-context">
             <div class="row">
               <div class="input-field col s12">
-                <input id="nome" type="text" class="validade" />
-                <label for="nome">Nome do medico</label>
+                <input name="medico" id="medico" th:value="${task.medico}" type="text" class="validade" />
+                <label for="medico">Nome do medico</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="descricao" class="materialize-textarea"></textarea>
+                <textarea name="descricao" id="descricao" class="materialize-textarea" th:text="${task.descricao}"></textarea>
                 <label for="textarea1">Descricao</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="especialidade" class="materialize-textarea"></textarea>
+                <textarea name="especialidade" id="especialidade" class="materialize-textarea" th:text="${task.especialidade}"></textarea>
                 <label for="textarea1">Especialidade</label>
               </div>
             </div>
