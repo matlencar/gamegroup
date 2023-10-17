@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <nav class="blue darken-1">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo right">ConsultForHealth</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li class="active"><a href="/task">Consultas pendentes</a></li>
+          <li><a href="#">Consultas concluidas</a></li>
+          <li><a href="#">Usuarios</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h2>Formulario de cadastro</h2>
+
+      <div class="card">
+        <form class="col s12" action="/task" method="post">
+          <div class="card-context">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="nome" type="text" class="validade" />
+                <label for="nome">Nome do medico</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="descricao" class="materialize-textarea"></textarea>
+                <label for="textarea1">Descricao</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="especialidade" class="materialize-textarea"></textarea>
+                <label for="textarea1">Especialidade</label>
+              </div>
+            </div>
+            <div class="card-action right-align">
+              <a href="/task">Cancelar</a>
+              <button class="btn">Cadastrar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
