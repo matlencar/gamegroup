@@ -3,6 +3,8 @@ package br.com.fiap.gamegroup.task;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,6 +23,15 @@ public class TaskConsultaController {
 
     @Autowired
     TaskConsultaService service;
+
+    
+
+    @GetMapping
+    public String index(Model model, @AuthenticationPrincipal OAuth2User user){
+        model.addAttribute("avatar_url", user.getAttribute("avatar_url"));
+        model.addAttribute("tasks", service.findAll());
+        return "task/index";
+    } 
     
 
     @GetMapping
