@@ -21,13 +21,13 @@ public class Consulta {
     @NotBlank
     @Size(min = 1)
     String medico;
-
+    
     @NotBlank
     @Size(min = 1)
     String especialidade;
-
+    
     @NotBlank
-    @Size(min = 1)
+    @Size(min = 1, message = "{task.description.size}")
     String descricao;
 
     @Positive
